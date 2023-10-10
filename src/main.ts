@@ -6,14 +6,10 @@ import * as config from 'config';
 
 async function bootstrap() {
   const logger = new Logger('boostrap');
-  console.log(
-    `${
-      process.env.DATABASE || config.get('db').DATABASE_LOCAL
-    }/task-management`,
-  );
 
   const app = await NestFactory.create(AppModule);
 
+  logger.log(`Cors origin: ${corsConfig.origin}`);
   if (process.env.NODE_ENV === 'development') {
     app.enableCors(corsConfig);
   } else {
