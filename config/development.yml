@@ -6,6 +6,6 @@ server:
 
 db:
   NODE_ENV: development
-  DATABASE_LOCAL: mongodb://localhost:27017
+  DATABASE_LOCAL: mongodb://127.0.0.1:27017/task-management
 jwt:
   secret: 'topSecret51'

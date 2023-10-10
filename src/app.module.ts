@@ -7,7 +7,7 @@ import * as config from 'config';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      `${process.env.DATABASE || config.get('db').LOCAL_DATABASE}`,
+      `${process.env.DATABASE || config.get('db').DATABASE_LOCAL}`,
     ),
     TasksModule,
     AuthModule,
