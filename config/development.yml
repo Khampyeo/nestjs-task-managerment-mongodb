@@ -5,10 +5,7 @@ server:
   allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept,Authorization'
 
 db:
-  host: 'localhost'
-  username: 'root'
-  password: 'kiet1212001'
-  synchronize: true
-
+  NODE_ENV: development
+  DATABASE_LOCAL: mongodb://localhost:27017
 jwt:
   secret: 'topSecret51'

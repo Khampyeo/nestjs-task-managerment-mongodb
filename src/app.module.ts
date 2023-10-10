@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TasksModule } from './tasks/tasks.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig } from './config/typeorm.config';
 import { AuthModule } from './auth/auth.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(typeOrmConfig), TasksModule, AuthModule],
+  imports: [
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/task-management'),
+    TasksModule,
+    AuthModule,
+  ],
 })
 export class AppModule {}

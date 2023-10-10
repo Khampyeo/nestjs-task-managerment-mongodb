@@ -6,6 +6,7 @@ import * as config from 'config';
 
 async function bootstrap() {
   const logger = new Logger('boostrap');
+
   const app = await NestFactory.create(AppModule);
 
   if (process.env.NODE_ENV === 'development') {
@@ -18,5 +19,7 @@ async function bootstrap() {
 
   const port = process.env.PORT || serverConfig.port;
   logger.log(`Application listening on port ${port}`);
+
+  await app.listen(port);
 }
 bootstrap();
